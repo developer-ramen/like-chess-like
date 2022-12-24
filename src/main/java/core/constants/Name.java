@@ -6,20 +6,21 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Name {
-	PAWN("P", "♙♟"),
-	KNIGHT("N", "♘♞"),
-	BISHOP("B", "♗♝"),
-	ROOK("R", "♖♜"),
-	QUEEN("Q", "♕♛"),
-	KING("K", "♔♚");
+	PAWN('P', "♙♟"),
+	KNIGHT('N', "♘♞"),
+	BISHOP('B', "♗♝"),
+	ROOK('R', "♖♜"),
+	QUEEN('Q', "♕♛"),
+	KING('K', "♔♚");
 	
-	private final String character, symbols;
+	private final char name;
+	private final String symbols;
 	
-	public final String getCharacter(Color color) {
-		return color == Color.WHITE ? character : character.toLowerCase();
+	public final char getName(Color color) {
+		return color == Color.WHITE ? name : Character.toLowerCase(name);
 	}
 	
-	public final String getSymbol(Color color) {
-		return color == Color.WHITE ? symbols.substring(0, 1) : symbols.substring(1);
+	public final char getSymbol(Color color) {
+		return symbols.charAt(color.ordinal());
 	}
 }

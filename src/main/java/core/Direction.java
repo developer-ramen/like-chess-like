@@ -1,12 +1,10 @@
 package core;
 
-import lombok.EqualsAndHashCode;
-import lombok.Value;
+import lombok.ToString;
 
 import java.util.List;
 
-@Value
-@EqualsAndHashCode(callSuper = true)
+@ToString
 public class Direction extends Point {
 	public Direction(int file, int rank) {
 		super(file, rank);

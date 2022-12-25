@@ -7,13 +7,13 @@ public class Board {
 	private final int width, height;
 	private final Cell[][] cells;
 	
-	public Board(final int width, final int height) {
+	public Board(int width, int height) {
 		this.width = width;
 		this.height = height;
 		this.cells = new Cell[width][height];
 	}
 	
-	public Board(final Cell[][] cells) {
+	public Board(Cell[][] cells) {
 		this.height = cells.length;
 		this.width = cells[0].length;
 		for (int i = 0; i < cells.length; i++) {
@@ -27,5 +27,10 @@ public class Board {
 			}
 		}
 		this.cells = cells;
+	}
+	
+	public Cell getCell(Point location) {
+		location.throwIfOutOfBounds(width, height);
+		return cells[location.getRank()][location.getFile()];
 	}
 }

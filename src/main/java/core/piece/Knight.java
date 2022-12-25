@@ -12,17 +12,17 @@ import core.constants.Value;
 import java.util.List;
 
 public class Knight extends Piece {
-	public Knight(Color color, Point location) {
-		super(Name.KNIGHT, Value.KNIGHT, color, location);
+	public Knight(Color color, Point location, Board board) {
+		super(Name.KNIGHT, Value.KNIGHT, color, location, board);
 	}
 	
 	@Override
-	public List<Cell> getAttackedCells(Board board) {
+	public List<Cell> getAttackedCells() {
 		return null;
 	}
 	
 	@Override
-	public List<Move> getPseudoLegalMoves(Board board) {
+	public List<Move> getPseudoLegalMoves() {
 		return null;
 	}
 }

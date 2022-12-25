@@ -12,17 +12,17 @@ import core.constants.Value;
 import java.util.List;
 
 public class Pawn extends Piece {
-	public Pawn(Color color, Point location) {
-		super(Name.PAWN, Value.PAWN, color, location);
+	public Pawn(Color color, Point location, Board board) {
+		super(Name.PAWN, Value.PAWN, color, location, board);
 	}
 	
 	@Override
-	public List<Cell> getAttackedCells(Board board) {
+	public List<Cell> getAttackedCells() {
 		return null;
 	}
 	
 	@Override
-	public List<Move> getPseudoLegalMoves(Board board) {
+	public List<Move> getPseudoLegalMoves() {
 		return null;
 	}
 }

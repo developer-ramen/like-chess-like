@@ -12,17 +12,17 @@ import core.constants.Value;
 import java.util.List;
 
 public class King extends Piece {
-	public King(Color color, Point location) {
-		super(Name.KING, Value.KING, color, location);
+	public King(Color color, Point location, Board board) {
+		super(Name.KING, Value.KING, color, location, board);
 	}
 	
 	@Override
-	public List<Cell> getAttackedCells(Board board) {
+	public List<Cell> getAttackedCells() {
 		return null;
 	}
 	
 	@Override
-	public List<Move> getPseudoLegalMoves(Board board) {
+	public List<Move> getPseudoLegalMoves() {
 		return null;
 	}
 }

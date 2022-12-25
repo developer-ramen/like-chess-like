@@ -1,5 +1,6 @@
 package core;
 
+import core.constants.Color;
 import lombok.Value;
 import lombok.experimental.NonFinal;
 
@@ -25,6 +26,20 @@ public class Point {
 	
 	public final Point negate() {
 		return new Point(-file, -rank);
+	}
+	
+	public final Point color(Color color) {
+		return color == Color.WHITE ? this : negate();
+	}
+	
+	public final void throwIfOutOfBounds(int fileBound, int rankBound) {
+		if (file < 0 || rank < 0 || file >= fileBound || rank >= rankBound) {
+			throw new IndexOutOfBoundsException(
+				"Point is out of bounds: "
+					+ "file: " + file + ", file bound:" + fileBound
+					+ ", rank: " + rank + ", rank bound" + rankBound
+			);
+		}
 	}
 	
 	@Override

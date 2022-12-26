@@ -39,12 +39,28 @@ public abstract class Piece {
 		);
 	}
 	
-	public boolean isAllyingTo(Piece other) {
+	public final boolean isAllyingTo(Piece other) {
 		return color == other.color;
 	}
 	
-	public boolean isOpposedTo(Piece other) {
+	public final boolean isOpposedTo(Piece other) {
 		return !isAllyingTo(other);
+	}
+	
+	public final Cell getContainingCell() {
+		return board.getCell(location);
+	}
+	
+	public final List<Vector> getAttackedPoints() {
+		return getAttackedCells()
+			.stream()
+			.map(Cell::getLocation)
+			.toList();
+	}
+	
+	public final List<Move> getLegalMoves() {
+		// TODO: IMPLEMENT THIS
+		return null;
 	}
 	
 	public abstract List<Cell> getAttackedCells();

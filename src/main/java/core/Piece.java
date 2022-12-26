@@ -16,7 +16,7 @@ public abstract class Piece {
 	private final int value;
 	
 	private final Color color;
-	private Point location;
+	private Vector location;
 	private final Board board;
 	
 	private final ArrayList<Move> moves;
@@ -26,7 +26,7 @@ public abstract class Piece {
 		final Name name,
 		final Value value,
 		final Color color,
-		final Point location,
+		final Vector location,
 		final Board board
 	) {
 		this(

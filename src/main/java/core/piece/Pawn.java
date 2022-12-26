@@ -4,7 +4,7 @@ import core.Board;
 import core.Cell;
 import core.Move;
 import core.Piece;
-import core.Point;
+import core.Vector;
 import core.constants.Color;
 import core.constants.Name;
 import core.constants.Value;
@@ -12,7 +12,7 @@ import core.constants.Value;
 import java.util.List;
 
 public class Pawn extends Piece {
-	public Pawn(Color color, Point location, Board board) {
+	public Pawn(Color color, Vector location, Board board) {
 		super(Name.PAWN, Value.PAWN, color, location, board);
 	}
 	

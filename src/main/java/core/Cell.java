@@ -6,10 +6,10 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Cell {
-	private final Point location;
+	private final Vector location;
 	private Piece piece;
 	
-	public Cell(Point location) {
+	public Cell(Vector location) {
 		this.location = location;
 		this.piece = null;
 	}

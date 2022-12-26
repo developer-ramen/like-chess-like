@@ -5,13 +5,13 @@ import lombok.ToString;
 import java.util.List;
 
 @ToString
-public class Direction extends Point {
+public class Direction extends Vector {
 	public Direction(int file, int rank) {
 		super(file, rank);
 	}
 	
-	public Direction(Point point) {
-		super(point.getFile(), point.getRank());
+	public Direction(Vector vector) {
+		super(vector.getFile(), vector.getRank());
 	}
 	
 	public static final Direction

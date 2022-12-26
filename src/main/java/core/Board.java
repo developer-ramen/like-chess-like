@@ -29,7 +29,7 @@ public class Board {
 		this.cells = cells;
 	}
 	
-	public Cell getCell(Point location) {
+	public Cell getCell(Vector location) {
 		location.throwIfOutOfBounds(width, height);
 		return cells[location.getRank()][location.getFile()];
 	}

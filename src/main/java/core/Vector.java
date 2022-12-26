@@ -8,27 +8,27 @@ import java.util.Objects;
 
 @Value
 @NonFinal
-public class Point {
+public class Vector {
 	int file, rank;
 	
-	public Point(int file, int rank) {
+	public Vector(int file, int rank) {
 		this.file = file;
 		this.rank = rank;
 	}
 	
-	public final Point add(Point other) {
-		return new Point(file + other.file, rank + other.rank);
+	public final Vector add(Vector other) {
+		return new Vector(file + other.file, rank + other.rank);
 	}
 	
-	public final Point scale(int scalar) {
-		return new Point(file * scalar, rank * scalar);
+	public final Vector scale(int scalar) {
+		return new Vector(file * scalar, rank * scalar);
 	}
 	
-	public final Point negate() {
-		return new Point(-file, -rank);
+	public final Vector negate() {
+		return new Vector(-file, -rank);
 	}
 	
-	public final Point color(Color color) {
+	public final Vector color(Color color) {
 		return color == Color.WHITE ? this : negate();
 	}
 	
@@ -46,7 +46,7 @@ public class Point {
 	public final boolean equals(Object obj) {
 		if (obj == this) return true;
 		if (obj == null || obj.getClass() != this.getClass()) return false;
-		var that = (Point) obj;
+		var that = (Vector) obj;
 		return this.file == that.file &&
 			this.rank == that.rank;
 	}

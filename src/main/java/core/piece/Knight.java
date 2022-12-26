@@ -4,7 +4,7 @@ import core.Board;
 import core.Cell;
 import core.Move;
 import core.Piece;
-import core.Point;
+import core.Vector;
 import core.constants.Color;
 import core.constants.Name;
 import core.constants.Value;
@@ -12,7 +12,7 @@ import core.constants.Value;
 import java.util.List;
 
 public class Knight extends Piece {
-	public Knight(Color color, Point location, Board board) {
+	public Knight(Color color, Vector location, Board board) {
 		super(Name.KNIGHT, Value.KNIGHT, color, location, board);
 	}
 	
